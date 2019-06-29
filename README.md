@@ -1,6 +1,10 @@
-# intellij-enhance
-增加一些非常好用的action，这些action都是平时实战（搬砖) 得出来，得益于IDEA强大的PSI，所以本插件能够精准增强代码导航，代码修改等功能，
-项目目的就是消除繁琐重复操作，提高生产力
+# Introduction
+增加一些非常好用的action，这些action都是平时实战（搬砖) 得出来，得益于IDEA强大的PSI，所以本插件能够精准增强代码导航，代码修改等功能，项目目的就是消除繁琐重复操作，提高生产力
+
+# Installation
+有两种安装方式
+1. (推荐) 从Preference -> Plugins -> Marketplace 搜索 action-enhancement
+2. 直接[下载](https://github.com/zgqq/action-enhancement/releases/)Jar包，然后 Preference -> Plugins -> Install Plugin from Disk
 
 # Usages
 - 配置成快捷键
@@ -37,7 +41,8 @@
 ![GotoClassNameAction](./screenshot/gotoclassname.gif "GotoClassNameAction")
 
 # Future
-后面会增加更多实用的action
+- 增加其他语言支持
+- 增加更多实用的action
 
 # Donation
 Wechat             |  Alipay
