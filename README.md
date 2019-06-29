@@ -3,8 +3,8 @@
 
 # Installation
 有两种安装方式
-1. (推荐) 从Preference -> Plugins -> Marketplace 搜索 action-enhancement
-2. 直接[下载](https://github.com/zgqq/action-enhancement/releases/)Jar包，然后 Preference -> Plugins -> Install Plugin from Disk
+1. (推荐) 在IDE打开 Preference -> Plugins -> Marketplace 搜索 action enhancement
+2. 直接[下载Jar包](https://github.com/zgqq/action-enhancement/releases/)，然后 在IDE打开 Preference -> Plugins -> Install Plugin from Disk
 
 # Usages
 - 配置成快捷键
