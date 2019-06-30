@@ -50,6 +50,9 @@
             <action id="Enhance.GotoClassName" class="github.zgqq.intellij.enhance.GotoClassNameAction"
                     text="GotoClassName"
                     description="GotoClassName"/>
+            <action id="Enhance.GotoOutermostMethodName" class="github.zgqq.intellij.enhance.GotoOutermostMethodNameAction"
+                    text="GotoOutermostMethodName"
+                    description="GotoOutermostMethodName"/>
         </group>
         <group id="Enhance.Copy" text="Enhance.Copy" description="Enhance.Copy">
             <action id="Enhance.CopyMethod" class="github.zgqq.intellij.enhance.CopyWholeMethodAction"

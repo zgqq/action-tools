@@ -1,5 +1,5 @@
 # Introduction
-增加一些非常好用的action，这些action都是平时实战（搬砖) 得出来，得益于IDEA强大的PSI，所以本插件能够精准增强代码导航，代码修改等功能，项目目的就是消除繁琐重复操作，提高生产力
+增加一些非常好用的action，这些action都是平时实战（搬砖) 得出来，得益于IDEA强大的PSI，所以本插件能够精准增强代码导航，代码修改等功能，可以给你提高2倍的开发效率
 
 # Installation
 有两种安装方式
@@ -39,6 +39,13 @@
 - 跳到当前类名   
 - 看代码的时候经常需要看当前类有哪些子类实现，代码太长，类名很难找到，这个action可以直接到当前类名
 ![GotoClassNameAction](./screenshot/gotoclassname.gif "GotoClassNameAction")
+
+## ChangeArgument
+- actionId: `Enhance.ChangeArgument`
+- 修改当前参数   
+- 写代码的时候经常要改方法参数，有些参数很长，鼠标选择起来很麻烦
+ ![ChangeArgument](./screenshot/changeargument.gif "ChangeArgument")
+
 
 # Future
 - 增加其他语言支持
