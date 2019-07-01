@@ -102,6 +102,10 @@ public class PsiUtils {
         }
     }
 
+    public static <T extends PsiElement> T getMostNearBeforeElement(T[] childrenOfType, int offset) {
+        return getMostNearBeforeElement(Arrays.asList(childrenOfType), offset);
+    }
+
     public static <T extends PsiElement> T getMostNearBeforeElement(Collection<T> childrenOfType, int offset) {
         int minDistance = Integer.MAX_VALUE;
         T mostNearExpression = null;

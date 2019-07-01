@@ -14,6 +14,12 @@
         <li>Fix action group id</li>
         <li>Make ChangeArgument smarter </li>
       </ul>
+      <p>1.4:</p>
+      <ul>
+        <li>Fix Enhance.AceJumpNavigation group register</li>
+        <li>Add GotoOutermostMethodName Action</li>
+        <li>Add NavigateToFieldArea Action</li>
+      </ul>
     ]]></change-notes>
 
 

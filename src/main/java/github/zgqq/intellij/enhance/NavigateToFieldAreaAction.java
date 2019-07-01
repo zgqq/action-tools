@@ -6,12 +6,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.Editor;
-import com.intellij.psi.PsiClass;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiField;
-import com.intellij.psi.PsiJavaFile;
+import com.intellij.psi.*;
 import com.intellij.psi.util.PsiTreeUtil;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Arrays;
 
 public class NavigateToFieldAreaAction extends AnAction {
     private static final Logger logger = Logger.getInstance(JumpAndChangeWordAction.class);
@@ -26,7 +25,18 @@ public class NavigateToFieldAreaAction extends AnAction {
 
         final PsiField[] fields = psiClass.getFields();
         if (fields != null && fields.length > 0) {
-            PsiUtils.navigate(fields[fields.length - 1]);
+            final PsiMethod[] constructors = psiClass.getConstructors();
+            PsiField psiField;
+            if (constructors != null && constructors.length > 0) {
+                psiField = PsiUtils.getMostNearBeforeElement(
+                        fields,
+                        constructors[0].getTextOffset()
+                );
+            } else {
+                psiField = fields[fields.length - 1];
+            }
+
+            PsiUtils.navigate(psiField);
         } else {
             PsiUtils.navigate(psiClass);
         }
