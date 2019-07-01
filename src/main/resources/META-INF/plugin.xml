@@ -53,6 +53,9 @@
             <action id="Enhance.GotoOutermostMethodName" class="github.zgqq.intellij.enhance.GotoOutermostMethodNameAction"
                     text="GotoOutermostMethodName"
                     description="GotoOutermostMethodName"/>
+            <action id="Enhance.NavigateToFieldArea" class="github.zgqq.intellij.enhance.NavigateToFieldAreaAction"
+                    text="NavigateToFieldArea"
+                    description="NavigateToFieldArea"/>
         </group>
         <group id="Enhance.Copy" text="Enhance.Copy" description="Enhance.Copy">
             <action id="Enhance.CopyMethod" class="github.zgqq.intellij.enhance.CopyWholeMethodAction"
