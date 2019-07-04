@@ -10,8 +10,6 @@ import com.intellij.psi.*;
 import com.intellij.psi.util.PsiTreeUtil;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Arrays;
-
 public class NavigateToFieldAreaAction extends AnAction {
     private static final Logger logger = Logger.getInstance(JumpAndChangeWordAction.class);
 

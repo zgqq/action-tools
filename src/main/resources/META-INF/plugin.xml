@@ -16,9 +16,10 @@
       </ul>
       <p>1.4:</p>
       <ul>
-        <li>Fix Enhance.AceJumpNavigation group register</li>
-        <li>Add GotoOutermostMethodName Action</li>
-        <li>Add NavigateToFieldArea Action</li>
+        <li>Fix Enhance.AceJumpNavigation group register (修复group id重复注册)</li>
+        <li>Add GotoOutermostMethodName Action (跳到最外层的方法名)</li>
+        <li>Add NavigateToFieldArea Action (直接跳到最后一个field)</li>
+        <li>Support changing method argument (支持改变方法头的参数)</li>
       </ul>
     ]]></change-notes>
 

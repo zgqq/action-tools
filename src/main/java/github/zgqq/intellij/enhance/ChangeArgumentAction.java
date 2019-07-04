@@ -10,6 +10,7 @@ import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.*;
+import com.intellij.psi.impl.source.PsiParameterImpl;
 import com.intellij.psi.util.PsiTreeUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -26,7 +27,7 @@ public class ChangeArgumentAction extends AnAction {
         final Document document = editor.getDocument();
         PsiJavaFile data = (PsiJavaFile) e.getData(LangDataKeys.PSI_FILE);
         final int offset = editor.getCaretModel().getOffset();
-        PsiElement pe = data.findElementAt(offset);
+        final PsiElement pe = data.findElementAt(offset);
         ConsoleUtils.log("pe", pe);
         ConsoleUtils.log("parent", pe.getParent());
 
@@ -78,6 +79,15 @@ public class ChangeArgumentAction extends AnAction {
                         document.deleteString(textRange.getStartOffset(), textRange.getEndOffset());
                         editor.getCaretModel().moveToOffset(textRange.getStartOffset());
                     });
+        } else {
+            final PsiParameter parameter = PsiTreeUtil.getParentOfType(pe, PsiParameter.class);
+            if (parameter != null) {
+                final TextRange textRange = parameter.getTextRange();
+                WriteCommandAction.runWriteCommandAction(editor.getProject(),
+                        () -> {
+                            document.deleteString(textRange.getStartOffset(), textRange.getEndOffset());
+                        });
+            }
         }
     }
 }
