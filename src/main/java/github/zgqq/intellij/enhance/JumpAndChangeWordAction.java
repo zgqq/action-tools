@@ -12,7 +12,6 @@ import javax.swing.*;
 public class JumpAndChangeWordAction extends JumpHookAction {
     
     private static final Logger logger = Logger.getInstance(JumpAndChangeWordAction.class);
-    
     protected Runnable createRunnable(AnActionEvent anActionEvent) {
         Editor editor = getEditorFrom(anActionEvent);
         return () -> {

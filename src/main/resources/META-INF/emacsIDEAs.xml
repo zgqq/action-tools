@@ -1,15 +1,16 @@
 <idea-plugin>
     <actions>
         <!-- Add your actions here -->
+        <group id="Enhance.VimChange" text="Enhance.VimChange" description="Enhance.VimChange">
+            <action id="Enhance.JumpAndChangeWord" class="github.zgqq.intellij.enhance.JumpAndChangeWordAction"
+                    text="JumpAndChangeWord"
+                    description="JumpAndChangeWord"/>
+        </group>
+
         <group id="Enhance.AceJumpNavigation" text="Enhance.AceJumpNavigation" description="Enhance.AceJumpNavigation">
             <action id="Enhance.JumpAndGoDefinition" class="github.zgqq.intellij.enhance.JumpAndGoDefinitionAction"
                     text="JumpAndGoDefinition"
                     description="JumpAndGoDefinition"/>
-        </group>
-        <group id="Enhance.Change" text="Enhance.Change" description="Enhance.Change">
-            <action id="Enhance.JumpAndChangeWord" class="github.zgqq.intellij.enhance.JumpAndChangeWordAction"
-                    text="JumpAndChangeWord"
-                    description="JumpAndChangeWord"/>
         </group>
     </actions>
 </idea-plugin>
