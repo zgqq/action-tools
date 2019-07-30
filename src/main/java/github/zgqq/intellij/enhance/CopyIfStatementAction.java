@@ -27,7 +27,7 @@ public class CopyIfStatementAction extends AnAction {
         LogicalPosition logicalPosition = CommonUtils.getLogicalPosition(caretModel);
         
         PsiJavaFile data = (PsiJavaFile) e.getData(LangDataKeys.PSI_FILE);
-    
+
         PsiElement pe = data.findElementAt(editor.getCaretModel().getOffset());
     
         PsiIfStatement ifStatement = PsiTreeUtil.getParentOfType(pe, PsiIfStatement.class);

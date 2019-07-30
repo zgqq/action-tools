@@ -10,7 +10,6 @@ import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.util.TextRange;
 import com.intellij.psi.*;
-import com.intellij.psi.impl.source.PsiParameterImpl;
 import com.intellij.psi.util.PsiTreeUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -38,33 +37,24 @@ public class ChangeArgumentAction extends AnAction {
         PsiExpression currentArg = null;
         if (psiExpressionList != null) {
 
-//            PsiExpressionList parentExpressionList = PsiTreeUtil.getParentOfType(psiExpressionList, PsiExpressionList.class);
-//            if (parentExpressionList != null) {
-//                psiExpressionList = parentExpressionList;
-//            }
 
-            for (PsiExpression expression : psiExpressionList.getExpressions()) {
-                final PsiElement[] children = expression.getChildren();
-                ConsoleUtils.log("arg", expression);
-                final PsiElement parentElement = PsiUtils.findParentElement(children, pe);
-                if (parentElement != null) {
-                    currentArg = expression;
-                    ConsoleUtils.log("argEle", expression);
-                    ConsoleUtils.log("argChildEle", parentElement);
+            currentArg = getPsiExpression(pe, psiExpressionList);
+
+            if (currentArg == null) {
+                if (psiExpressionList.getExpressionCount() > 0) {
+                    final PsiExpression mostNearBeforeElement = PsiUtils.getMostNearBeforeElement(Arrays.asList(psiExpressionList.getExpressions()),
+                            pe.getTextOffset());
+                    currentArg = mostNearBeforeElement;
+                } else {
+                    PsiExpressionList parentExpression = PsiTreeUtil.getParentOfType(psiExpressionList, PsiExpressionList.class);
+                    currentArg = getPsiExpression(pe, parentExpression);
                 }
-            }
-
-            if (currentArg == null && psiExpressionList.getExpressionCount() > 0) {
-                final PsiExpression mostNearBeforeElement = PsiUtils.getMostNearBeforeElement(Arrays.asList(psiExpressionList.getExpressions()),
-                        pe.getTextOffset());
-                currentArg = mostNearBeforeElement;
             }
         } else {
             final PsiStatement parentOfType = PsiTreeUtil.getParentOfType(pe, PsiStatement.class);
             final Collection<PsiExpressionList> childrenOfType = PsiTreeUtil.findChildrenOfType(parentOfType, PsiExpressionList.class);
 
             psiExpressionList = PsiUtils.findChildAfterOffset(childrenOfType, offset);
-
 
             if (psiExpressionList != null && psiExpressionList.getExpressionCount() > 0) {
                 currentArg = psiExpressionList.getExpressions()[0];
@@ -80,7 +70,7 @@ public class ChangeArgumentAction extends AnAction {
                         editor.getCaretModel().moveToOffset(textRange.getStartOffset());
                     });
         } else {
-            final PsiParameter parameter = PsiTreeUtil.getParentOfType(pe, PsiParameter.class);
+            PsiParameter parameter = PsiTreeUtil.getParentOfType(pe, PsiParameter.class);
             if (parameter != null) {
                 final TextRange textRange = parameter.getTextRange();
                 WriteCommandAction.runWriteCommandAction(editor.getProject(),
@@ -89,5 +79,21 @@ public class ChangeArgumentAction extends AnAction {
                         });
             }
         }
+    }
+
+    private PsiExpression getPsiExpression(PsiElement pe, PsiExpressionList psiExpressionList) {
+        PsiExpression currentArg = null;
+        for (PsiExpression expression : psiExpressionList.getExpressions()) {
+            final PsiElement[] children = expression.getChildren();
+            ConsoleUtils.log("arg", expression);
+            final PsiElement parentElement = PsiUtils.findParentElement(children, pe);
+            if (parentElement != null) {
+                currentArg = expression;
+                ConsoleUtils.log("argEle", expression);
+                ConsoleUtils.log("argChildEle", parentElement);
+                break;
+            }
+        }
+        return currentArg;
     }
 }
