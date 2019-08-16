@@ -13,6 +13,7 @@
       <ul>
         <li>Fix plugin config (彻底解决重复注册报错)</li>
         <li>Improve change argument action(修改参数更智能)</li>
+        <li>Add CopyArthlasWatchCommand action (watch com.github method1 "{params,returnObj,target}" -x 1)</li>
       </ul>
       <p>1.4:</p>
       <ul>
@@ -81,6 +82,9 @@
             <action id="Enhance.ChangeArgument" class="github.zgqq.intellij.enhance.ChangeArgumentAction"
                     text="ChangeArgument"
                     description="ChangeArgument"/>
+            <action id="Enhance.CopyArthlasWatchCommand" class="github.zgqq.intellij.enhance.arthlas.WatchCommandAction"
+                    text="CopyArthlasWatchCommand"
+                    description="CopyArthlasWatchCommand"/>
         </group>
         <group id="Enhance.Delete" text="Enhance.Delete" description="Enhance.Delete">
             <action id="Enhance.DeleteMethod" class="github.zgqq.intellij.enhance.DeleteWholeMethodAction"
