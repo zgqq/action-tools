@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>github.zgqq.intellij-enhance</id>
-    <name>Action Enhancement</name>
+    <name>Action Tools</name>
     <vendor email="zgqjava@gmail.com" url="https://github.com/zgqq/intellij-enhance">xa</vendor>
     <idea-version since-build="183.2940.10"/>
 
