@@ -12,7 +12,7 @@
   * 你可以在 Preference -> Keymap  把插件的action 插件配置成快捷键
 - 结合ideavim， 比如在~/.ideavimrc 配置加入 
  `nnoremap dam :action Enhance.DeleteMethod<CR>` 就可以 在 正常模式 键入dam 删除一个方法
-这是我的个人在ideavim配置，谁用谁知道，哈哈哈
+- 这是我的个人在ideavim配置，谁用谁知道，哈哈哈
 ```
 nnoremap <Space>c :action Enhance.GotoOutermostMethodName<CR>:action GotoDeclaration<CR>
 nnoremap <Space>b :action Enhance.GotoClassName<CR>:action GotoImplementation<CR>
