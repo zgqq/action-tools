@@ -1,5 +1,6 @@
 # Introduction
-增加一些非常好用的action，这些action都是平时实战（搬砖) 得出来，得益于IDEA强大的PSI，所以本插件能够精准增强代码导航，代码修改等功能，可以给你提高2倍的开发效率
+增加一些非常好用的action，这些action都是平时实战（搬砖)得出来，得益于IDEA强大的PSI，
+所以本插件能够精准增强代码导航，代码修改等功能，可以给你提高2倍的开发效率
 
 # Installation
 有两种安装方式
@@ -11,6 +12,25 @@
   * 你可以在 Preference -> Keymap  把插件的action 插件配置成快捷键
 - 结合ideavim， 比如在~/.ideavimrc 配置加入 
  `nnoremap dam :action Enhance.DeleteMethod<CR>` 就可以 在 正常模式 键入dam 删除一个方法
+这是我的个人在ideavim配置，谁用谁知道，哈哈哈
+```
+nnoremap <Space>c :action Enhance.GotoOutermostMethodName<CR>:action GotoDeclaration<CR>
+nnoremap <Space>b :action Enhance.GotoClassName<CR>:action GotoImplementation<CR>
+
+nnoremap <Space>gc :action Enhance.GotoClassName<CR>:action GotoDeclaration<CR>
+nnoremap <Space>gf :action Enhance.NavigateToFieldArea<CR>
+
+noremap dia :action Enhance.DeleteInnerArgument<CR>
+noremap cia :action Enhance.DeleteInnerArgument<CR>i
+
+noremap daa :action Enhance.ChangeArgument<CR>
+noremap caa :action Enhance.ChangeArgument<CR>i
+
+nnoremap yam :action Enhance.CopyMethod<CR>
+nnoremap dam :action Enhance.DeleteMethod<CR>
+
+nnoremap <Space>li :action Enhance.LogMethodArguments<CR>
+```
 
 # Features 
 ## SelectMethodAction
