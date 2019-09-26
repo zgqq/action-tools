@@ -9,6 +9,12 @@
     </description>
 
     <change-notes><![CDATA[
+      <p>1.6:</p>
+      <ul>
+        <li>Add DeleteAndCopyMethodAction(删除并且复制当前方法)</li>
+        <li>Add GotoMethodEndAction(调到方法底部)</li>
+      </ul>
+
       <p>1.5:</p>
       <ul>
         <li>Fix plugin config (彻底解决重复注册报错)</li>
@@ -72,6 +78,9 @@
             <action id="Enhance.NavigateToFieldArea" class="github.zgqq.intellij.enhance.NavigateToFieldAreaAction"
                     text="NavigateToFieldArea"
                     description="NavigateToFieldArea"/>
+            <action id="Enhance.GotoMethodEnd" class="github.zgqq.intellij.enhance.GotoMethodEndAction"
+                    text="GotoMethodEnd"
+                    description="GotoMethodEnd"/>
         </group>
         <group id="Enhance.Copy" text="Enhance.Copy" description="Enhance.Copy">
             <action id="Enhance.CopyMethod" class="github.zgqq.intellij.enhance.CopyWholeMethodAction"
@@ -94,7 +103,13 @@
             <!--<action id="Enhance.DeleteArgument" class="github.zgqq.intellij.enhance.ChangeArgumentAction"-->
                     <!--text="DeleteArgument"-->
                     <!--description="DeleteArgument"/>-->
+            <action id="Enhance.DeleteAndCopyMethod" class="github.zgqq.intellij.enhance.DeleteAndCopyMethodAction"
+                    text="DeleteAndCopyMethod"
+                    description="DeleteAndCopyMethod"/>
         </group>
+
+
+
         <group id="Enhance.Convert" text="Enhance.Convert" description="Enhance.Convert">
             <action id="Enhance.ConvertRedisKey" class="github.zgqq.intellij.enhance.ConvertRedisFormatAction"
                     text="ConvertRedisKey"
