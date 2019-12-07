@@ -71,10 +71,5 @@ nnoremap <Space>li :action Enhance.LogMethodArguments<CR>
 - 增加其他语言支持
 - 增加更多实用的action
 
-# Donation
-Wechat             |  Alipay
-:-------------------------:|:-------------------------:
-![weixin](./screenshot/wechat.jpg "weixin")  |  ![alipay](./screenshot/alipay.png "alipay")
 
-如果觉得这个项目对你有帮助，欢迎捐赠！
 
